@@ -1,9 +1,15 @@
+function Checkout() {
+
+return (
+    <p>Checkout</p>
+)
+
+} 
 
 
 
 
-
-//export default Checkout
+export default Checkout
 
 
 // ### ORDER - CHECKOUT
