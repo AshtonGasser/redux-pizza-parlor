@@ -5,9 +5,12 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios'
 
 
+} 
+
 
 function Checkout() {
     const dispatch = useDispatch()
+
 
     const CheckoutList = useSelector(store => store.cartReducer)
 
@@ -43,6 +46,7 @@ function Checkout() {
 
 }
 export default Checkout;
+
 
 
 // ### ORDER - CHECKOUT

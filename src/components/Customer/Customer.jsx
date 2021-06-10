@@ -1,4 +1,8 @@
 
+function Customer () {
+
+    return ( <p>Customer </p>)
+}
 
 
 
@@ -9,7 +13,8 @@
 
 
 
-//export default Customer
+export default Customer;
+
 
 
 
