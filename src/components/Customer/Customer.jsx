@@ -1,3 +1,4 @@
+
 function Customer () {
 
     return ( <p>Customer </p>)
@@ -13,6 +14,7 @@ function Customer () {
 
 
 export default Customer;
+
 
 
 
