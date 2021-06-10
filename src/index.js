@@ -6,6 +6,19 @@ import logger from 'redux-logger';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
+const menuReducer = (state=[], action) => {
+    if (action.type === 'GET_MENU') {
+        axios.get('/api/pizza')
+        .then( response => {
+            return[response.data]
+        })
+        .catch(error => {
+            console.log('error getting menu', error);
+            
+        })     
+    }
+    return state;
+}
 
 
 
@@ -25,7 +38,7 @@ const cartReducer = (state = [], action) => {
 
 const store = createStore(
 combineReducers({
-
+menuReducer
 cartReducer
 }),
 applyMiddleware(logger),
