@@ -39,8 +39,45 @@ function Checkout() {
 
 
 
+function Checkout() {
+    const dispatch = useDispatch()
 
-//export default Checkout
+
+    const CheckoutList = useSelector(store => store.cartReducer)
+
+    const handleCheckout = () => {
+        axios.post('/')
+            .then(response => {
+
+                dispatch({
+                    type: 'GET_CHECKOUT',
+                    payload: response.data
+                })
+            }).catch(err => {
+                console.log(err);
+            })
+    }
+
+    
+    
+
+    return (
+        <div>
+            <div className="display">
+                {/* //menu, cust, checkout */}
+                <table>
+                    <tbody>Checkout Table</tbody>
+                </table>
+            </div>
+            <button>Next</button>
+
+        </div>
+
+    )
+
+}
+export default Checkout;
+
 
 
 // ### ORDER - CHECKOUT

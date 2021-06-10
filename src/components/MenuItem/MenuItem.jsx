@@ -3,14 +3,51 @@ import React from 'react'
 import {useDispatch} from 'react-redux'
 import axios from 'axios'
 
-function MenuItem (){
+function MenuItem (props){
 const dispatch = useDispatch ()
 //const deleteItem =() => {
 const menu =  useSelector(store => store.menuReducer)
-//}
+
+function handleAdd () {
+    dispatch({
+        type: 'ADD_TO_CART',
+        payload: 'replace with ID'  /// <--------
+      })
+}
+function handleRemove () {
+    dispatch({
+        type: 'REMOVE_FROM_CART',
+        payload: 'replace with ID'  /// <--------
+      })
+}
+
+function addOrRemove () {
+    let isAdd = true;
+    if (isAdd) {
+        isAdd = !isAdd
+        return <button onClick={handleAdd}>Add</button>
+    } else if (!isAdd) {
+        isAdd = !isAdd
+        return <button onClick={handleRemove}>Remove</button>
+    }
+}
+
     return (
 
-        <p> {JSON.stringify(menu)}</p>
+        <div className="menu-card" >
+            <div className="pizza-img">
+               
+            </div>
+            <div className="pizza-description">
+
+            </div>
+            <div className="card-button">
+                
+            </div>
+
+
+        </div>
+
 
 
 )
@@ -32,3 +69,20 @@ export default MenuItem
 // This page should have a next button that brings the user to the **enter order details page**.
 
 // ![Select Pizza View](wireframes/screen-one.png)
+
+
+
+
+// <div className="menu-card" key={item.id}>
+//              <div className="img-div">
+//                 <img className="pizza-img" src={item.image_path} alt="" />
+//              </div>
+//              <div className="pizza-description">
+//                 <p>{item.name}</p>
+//                 <p>{item.description}</p>
+//              </div>
+//              <div className="card-button">
+//                  {addOrRemove(item.ID)}
+
+//                  {/* <button onClick={addOrRemove(item.id, isAdd)}></button> */}
+//              </div>
