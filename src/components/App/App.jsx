@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-
+import menuItem from '../MenuItem/MenuItem'
 import { Route, HashRouter as Router, Link, useHistory } from 'react-router-dom';
 
 function App() {
@@ -16,8 +16,9 @@ function App() {
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
   
-
+    <MenuItem/>
   {/* 
+  
   
   <Route path='/menu-form'>
   <MenuForm/>

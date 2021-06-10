@@ -1,11 +1,25 @@
+import {useSelector} from 'react-redux'
+import React from 'react'
+import {useDispatch} from 'react-redux'
+import axios from 'axios'
+
+function MenuItem (){
+const dispatch = useDispatch ()
+//const deleteItem =() => {
+const menu =  useSelector(store => store.menuReducer)
+//}
+    return (
+
+        <p> {JSON.stringify(menu)}</p>
+
+
+)
+
+}
 
 
 
-
-
-
-
-//export default MenuItem
+export default MenuItem
 
 
 // ### ORDER - SELECT PIZZA
