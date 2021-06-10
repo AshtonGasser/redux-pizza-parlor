@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
-
+// GET Route⬇
 router.get('/', (req, res) => {
     console.log('GET /api/pizza');
     pool.query('SELECT * from "pizza";').then((result) => {
