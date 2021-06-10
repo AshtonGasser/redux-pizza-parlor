@@ -7,20 +7,13 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 const menuReducer = (state=[], action) => {
-    if (action.type === 'GET_MENU') {
-        axios.get('/api/pizza')
-        .then( response => {
-            return[response.data]
-        })
-        .catch(error => {
-            console.log('error getting menu', error);
-            
-        })     
+    if (action.type === 'SET_MENU') { // axios GET
+        return action.payload
+    } else if ( action.type === 'GET_MENU') {
+        return state
     }
     return state;
 }
-
-
 
 
 const cartReducer = (state = [], action) => {
