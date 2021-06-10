@@ -1,4 +1,41 @@
 
+import { useSelector } from 'react-redux';
+import React from 'react'
+import { useDispatch } from 'react-redux';
+import axios from 'axios'
+
+
+
+function Checkout() {
+    const dispatch = useDispatch()
+    const CheckoutList = useSelector(store => store.checkout)
+
+
+    axios.post('/api/pizza')
+        .then(response => {
+
+            dispatch({
+                type: 'GET_CHECKOUT',
+                payload: response.data
+            })
+
+        })
+
+    return (
+        <div>
+            <div className="display">
+                {/* //menu, cust, checkout */}
+                <table>
+                    <tbody>Checkout Table</tbody>
+                </table>
+            </div>
+            <button>Next</button>
+
+        </div>
+
+    )
+
+}
 
 
 

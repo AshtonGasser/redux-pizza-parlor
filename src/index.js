@@ -36,10 +36,21 @@ const cartReducer = (state = [], action) => {
     }
 }
 
+
+const checkoutReducer = (state = [], action) => {
+
+    if (action.type === 'GET_CHECKOUT') {
+        return action.payload
+    }
+    return state;
+}
+
 const store = createStore(
 combineReducers({
-menuReducer
-cartReducer
+menuReducer,
+cartReducer, 
+checkoutReducer 
+
 }),
 applyMiddleware(logger),
 )
