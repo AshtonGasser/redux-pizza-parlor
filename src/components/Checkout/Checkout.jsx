@@ -5,9 +5,6 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios'
 
 
-} 
-
-
 function Checkout() {
     const dispatch = useDispatch()
 
