@@ -38,7 +38,7 @@ const cartReducer = (state = [], action) => {
 
 const store = createStore(
 combineReducers({
-menuReducer
+menuReducer,
 cartReducer
 }),
 applyMiddleware(logger),
