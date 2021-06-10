@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import menuItem from '../MenuItem/MenuItem'
+import MenuItem from '../MenuItem/MenuItem'
+import MenuForm from '../MenuForm/MenuForm'
 import { Route, HashRouter as Router, Link, useHistory } from 'react-router-dom';
 
 function App() {
@@ -17,8 +18,12 @@ function App() {
       <p>Pizza is great.</p>
   
     <MenuItem/>
+
+    <MenuForm/>
   {/* 
   
+
+
   
   <Route path='/menu-form'>
   <MenuForm/>
