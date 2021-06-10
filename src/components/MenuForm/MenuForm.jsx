@@ -56,10 +56,10 @@ function handleRemove (ID, isAdd) {
 // conditionally rendered button that also sends the above dispatches on click 
 function addOrRemove (ID) {
     if (isAdd) {
-        setIsAdd(!isAdd)
+    
         return <button onClick={handleAdd}>Add</button>
     } else if (!isAdd) {
-        setIsAdd(!isAdd)
+        
         return <button onClick={handleRemove}>Remove</button>
     }
 }
@@ -69,6 +69,7 @@ function addOrRemove (ID) {
             <div className="display">
           
             {menu.map((item) => 
+            
              <div className="menu-card" key={item.id}>
              <div className="img-div">
                 <img className="pizza-img" src={item.image_path} alt="" />

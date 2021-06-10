@@ -71,3 +71,18 @@ export default MenuItem
 // ![Select Pizza View](wireframes/screen-one.png)
 
 
+
+
+// <div className="menu-card" key={item.id}>
+//              <div className="img-div">
+//                 <img className="pizza-img" src={item.image_path} alt="" />
+//              </div>
+//              <div className="pizza-description">
+//                 <p>{item.name}</p>
+//                 <p>{item.description}</p>
+//              </div>
+//              <div className="card-button">
+//                  {addOrRemove(item.ID)}
+
+//                  {/* <button onClick={addOrRemove(item.id, isAdd)}></button> */}
+//              </div>
