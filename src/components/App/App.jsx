@@ -10,7 +10,7 @@ import {
   useHistory,
 } from "react-router-dom";
 
-import Customer from '..'
+import Customer from '../Customer/Customer'
 import Checkout from '../Checkout/Checkout.jsx'
 
 
@@ -27,10 +27,10 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/menu-form">About</Link>
+              <Link to="/menu-form">Menu</Link>
             </li>
             <li>
-              <Link to="/Customer">All Students</Link>
+              <Link to="/Customer">Customer Info</Link>
             </li>
           </ul>
         </nav>
