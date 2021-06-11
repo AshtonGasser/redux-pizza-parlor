@@ -1,7 +1,14 @@
 
 function Customer () {
 
-    return ( <p>Customer </p>)
+    return ( 
+    
+    <p>Customer </p>
+    
+    
+    
+    )
+
 }
 
 
