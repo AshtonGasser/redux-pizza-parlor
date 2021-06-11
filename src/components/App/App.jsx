@@ -23,7 +23,10 @@ function App() {
           <h1 className="App-title">Prime Pizza</h1>
           
         </header>
-        <nav>
+
+        <div className="nav-cost-div">
+          <div className="nav-div">
+        <nav className="nav">
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -39,11 +42,18 @@ function App() {
             </li>
           </ul>
         </nav>
+        </div>
+
+        <div className="cost-div"> <TotalCost/> </div>
+
+        </div>
+       
 
         {/* <img src='images/pizza_photo.png' /> */}
-        <p>Pizza is great.</p>
+      
 
-        <div> <TotalCost/> </div>
+       
+
         <Route path="/menu-form">
           <MenuForm />
         </Route>
@@ -56,22 +66,6 @@ function App() {
           <Checkout />
         </Route>
 
-        {/* 
-  
-  
-  <Route path='/menu-form'>
-  <MenuForm/>
-  </Route>
-  <Route path='/customer'>
-  <Customer/>
-  </Route>
-  
-  <Route path='/checkout'>
-  <Checkout/>
-  </Route>
-  
-  
-  */}
       </div>
     </Router>
   );

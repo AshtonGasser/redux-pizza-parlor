@@ -13,3 +13,22 @@
 .App-title {
   font-size: 2em;
 }
+
+
+.nav-cost-div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%
+  
+
+}
+
+li{
+  list-style: none;
+}
+
+
+.cost-div{
+
+}

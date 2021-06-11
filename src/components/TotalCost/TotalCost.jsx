@@ -14,7 +14,7 @@ function TotalCost () {
       });
     }
     return (
-        <p>Cost: {calculateCost()}</p>
+        <p>{calculateCost()}</p>
     )
 }
 

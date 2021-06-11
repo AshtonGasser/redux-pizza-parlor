@@ -45,3 +45,7 @@ XX _reducers -
 menuReducer - is the db response from the get (pageLoad)
 
 )
+
+
+standup -- cost component, form front, explain how items are passed into cart
+customer info reducer?

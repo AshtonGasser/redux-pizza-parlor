@@ -20,12 +20,12 @@ function MenuItem({item}) {
       payload: item,
     });
   }
-//   function handleRemove() {
-//     dispatch({
-//       type: "REMOVE_FROM_CART",
-//       payload: "replace with ID", /// <--------
-//     });
-//   }
+  function handleRemove() {
+    dispatch({
+      type: "REMOVE_FROM_CART",
+      payload: item
+    });
+  }
 
 //   function addOrRemove() {
 //     let isAdd = true;
@@ -50,6 +50,7 @@ function MenuItem({item}) {
       <div className="card-button">
         {/* {addOrRemove(item.ID)} */}
         <button onClick={handleAdd}>Add</button>
+        <button onClick={handleRemove}>Remove</button>
         {/* <button onClick={addOrRemove(item.id, isAdd)}></button> */}
       </div>
     </div>
