@@ -41,7 +41,7 @@ function MenuItem({ item }) {
         <img className="pizza-img" src={item.image_path} alt="" />
       </div>
       <div className="pizza-description">
-        <p>{item.name}</p>
+        <h3>{item.name}</h3>
         <p>{item.description}</p>
       </div>
       <div className="card-button">

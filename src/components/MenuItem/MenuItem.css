@@ -2,7 +2,10 @@
 
 .menu-card{
     display: flex;
-   
+   justify-content: center;
+   padding-bottom: 1em;
+   /* border: 4px solid red; */
+   /* background-color: red; */
 }
 
 .pizza-img {
@@ -10,9 +13,23 @@
 }
 
 .pizza-description{
-    width: 200px
+    width: 200px;
+    background-color: green
 }
 
 .card-button {
-    width: 65px
+    width: 65px;
+    align-content: center;
+    margin-top: 4em;
+}
+
+p {
+    font-size: 9pt;
+    margin-left: 8px;
+    margin-right: 8px;
+    background-color: white;
+}
+
+h3 {
+    background-color: red;
 }

@@ -1,12 +1,27 @@
-function Checkout () {
+import { useSelector } from "react-redux";
+import CheckoutRow from "../CheckoutRow/CheckoutRow";
 
-    return (  
-         <div>
-        <p>checkout</p>
-     
-     </div> )
- 
-     
+function Checkout() {
+  const cart = useSelector((store) => store.cartReducer);
+
+  console.log("cart", cart);
+
+  return (
+    <div>
+      <table className="">
+        <tbody>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+          </tr>
+
+          {cart.map((item) => {
+            return <CheckoutRow item={item} />;
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
 }
-    
-export default Checkout
+
+export default Checkout;

@@ -20,22 +20,18 @@ function App() {
         <div className="nav-cost-div">
           <div className="nav-div">
         <nav className="nav">
-          <ul>
-            <li>
+         
               <Link to="/">Home</Link>
-            </li>
-            <li>
+          
               <Link to="/menu-form">Menu</Link>
-            </li>
-            <li>
+           
               <Link to="/customer">Customer Info</Link>
-              <li>
+              
               <Link to="/checkout">Checkout</Link>
-            </li>
-            </li>
-          </ul>
+          
+         
         </nav>
-        </div>
+         </div>
 
         <div className="cost-div"> <TotalCost/> </div>
 
