@@ -1,44 +1,41 @@
 import { useSelector } from "react-redux";
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
 
-import './MenuItem.css'
+import "./MenuItem.css";
 
+function MenuItem({ item }) {
+  const dispatch = useDispatch();
 
-function MenuItem({item}) {
-   
-
- const dispatch = useDispatch();
- 
-//const deleteItem =() => {
-
+  const [isAdd, setIsAdd] = useState(true); // controls conditional render flow
 
   function handleAdd() {
-      console.log('adding pizza with id of:', item.id);
+    console.log("adding pizza with id of:", item.id);
     dispatch({
       type: "ADD_TO_CART",
       payload: item,
     });
+    setIsAdd(false);
   }
   function handleRemove() {
     dispatch({
       type: "REMOVE_FROM_CART",
-      payload: item
+      payload: item,
     });
+    setIsAdd(true);
   }
 
-//   function addOrRemove() {
-//     let isAdd = true;
-//     if (isAdd) {
-//       isAdd = !isAdd;
-//       return <button onClick={handleAdd}>Add</button>;
-//     } else if (!isAdd) {
-//       isAdd = !isAdd;
-//       return <button onClick={handleRemove}>Remove</button>;
-//     }
-//   }
+  // renders a button to add or delete based on local state of isAdd boolean
+    function addOrRemove() {
+      if (isAdd) {
+        return <button onClick={handleAdd}>Add</button>;
+      } else if (!isAdd) {
+        return <button onClick={handleRemove}>Remove</button>;
+      }
+    }
 
-  return ( 
+  return (
     <div className="menu-card">
       <div className="img-div">
         <img className="pizza-img" src={item.image_path} alt="" />
@@ -48,10 +45,7 @@ function MenuItem({item}) {
         <p>{item.description}</p>
       </div>
       <div className="card-button">
-        {/* {addOrRemove(item.ID)} */}
-        <button onClick={handleAdd}>Add</button>
-        <button onClick={handleRemove}>Remove</button>
-        {/* <button onClick={addOrRemove(item.id, isAdd)}></button> */}
+        {addOrRemove()}
       </div>
     </div>
   );
@@ -69,4 +63,3 @@ export default MenuItem;
 // This page should have a next button that brings the user to the **enter order details page**.
 
 // ![Select Pizza View](wireframes/screen-one.png)
-

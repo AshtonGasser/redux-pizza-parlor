@@ -6,9 +6,13 @@
 }
 
 .pizza-img {
-   width: 100%
+   width: 250px
 }
 
 .pizza-description{
-    width: 100%
+    width: 200px
+}
+
+.card-button {
+    width: 65px
 }

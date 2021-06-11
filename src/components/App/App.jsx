@@ -1,14 +1,7 @@
 import React from "react";
-import axios from "axios";
 import "./App.css";
-import MenuItem from "../MenuItem/MenuItem";
 import MenuForm from "../MenuForm/MenuForm";
-import {
-  Route,
-  HashRouter as Router,
-  Link,
-  useHistory,
-} from "react-router-dom";
+import {Route, HashRouter as Router, Link, useHistory,} from "react-router-dom";
 
 import Customer from '../Customer/Customer.jsx'
 import Checkout from '../Checkout/Checkout.jsx'
@@ -47,12 +40,7 @@ function App() {
         <div className="cost-div"> <TotalCost/> </div>
 
         </div>
-       
-
         {/* <img src='images/pizza_photo.png' /> */}
-      
-
-       
 
         <Route path="/menu-form">
           <MenuForm />
