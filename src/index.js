@@ -16,6 +16,13 @@ const menuReducer = (state=[], action) => {
 }
 
 
+const infoReducer = (state = [], action) => {
+    if (action.type === 'ADD_INFO') {
+        return [...state, action.payload]
+    }
+    return state;
+}
+
 
 // tl- this needs to take in the ID, in payload, and filter out all items 
 // not in the cart, return a new state array of things in the cart. this needs to be 
@@ -36,7 +43,8 @@ const cartReducer = (state = [], action) => {
 const store = createStore(
 combineReducers({
 menuReducer,
-cartReducer
+cartReducer,
+infoReducer
 }),
 applyMiddleware(logger),
 )
