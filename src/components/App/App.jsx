@@ -68,7 +68,7 @@ function App() {
         </Route>
 
 
-        </header>
+        {/* </header> */}
         <nav>
           <ul>
             <li>
