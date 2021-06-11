@@ -17,7 +17,9 @@ const menuReducer = (state=[], action) => {
 
 
 
-
+// tl- this needs to take in the ID, in payload, and filter out all items 
+// not in the cart, return a new state array of things in the cart. this needs to be 
+// referenced in the checkout page
 const cartReducer = (state = [], action) => {
 
     switch(action.type){ 
