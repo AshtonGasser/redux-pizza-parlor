@@ -19,18 +19,18 @@ const menuReducer = (state=[], action) => {
 
 // tl- this needs to take in the ID, in payload, and filter out all items 
 // not in the cart, return a new state array of things in the cart. this needs to be 
-// referenced in the checkout page
+// referenced in the 
 const cartReducer = (state = [], action) => {
 
     switch(action.type){ 
     case 'ADD_TO_CART':
     return [...state,action.payload]
-    //case 'REMOVE_FROM_CART':
-    //const matchOrder = pizza => pizza.idNumber !== pizzaToDelete.idNumber; 
-    //return state.filter(matchOrder)
     default:
     return state;
     }
+
+    
+
 }
 
 const store = createStore(

@@ -12,6 +12,7 @@ import {
 
 import Customer from '../Customer/Customer.jsx'
 import Checkout from '../Checkout/Checkout.jsx'
+import TotalCost from '../TotalCost/TotalCost'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Prime Pizza</h1>
+          
         </header>
         <nav>
           <ul>
@@ -41,7 +43,7 @@ function App() {
         {/* <img src='images/pizza_photo.png' /> */}
         <p>Pizza is great.</p>
 
-
+        <div> <TotalCost/> </div>
         <Route path="/menu-form">
           <MenuForm />
         </Route>

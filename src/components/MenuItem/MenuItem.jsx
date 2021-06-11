@@ -17,7 +17,7 @@ function MenuItem({item}) {
       console.log('adding pizza with id of:', item.id);
     dispatch({
       type: "ADD_TO_CART",
-      payload: item.id,
+      payload: item,
     });
   }
 //   function handleRemove() {
