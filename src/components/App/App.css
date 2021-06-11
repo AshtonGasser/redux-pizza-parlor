@@ -13,3 +13,28 @@
 .App-title {
   font-size: 2em;
 }
+
+
+.nav-cost-div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+ 
+}
+
+li{
+  list-style: none;
+}
+.nav-div{
+  margin-left: 8em;
+
+}
+
+.nav{
+  padding: 1em;
+}
+
+a{
+  padding: 1em
+}

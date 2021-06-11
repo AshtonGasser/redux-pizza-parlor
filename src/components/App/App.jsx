@@ -31,9 +31,6 @@ function App() {
             </li>
             <li>
               <Link to="/Customer">Customer Info</Link>
-              <li>
-              <Link to="/Checkout">Checkout</Link>
-            </li>
             </li>
           </ul>
         </nav>
