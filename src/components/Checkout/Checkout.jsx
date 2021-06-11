@@ -1,19 +1,12 @@
 import { useSelector } from "react-redux";
 import CheckoutRow from "../CheckoutRow/CheckoutRow";
 
-
 function Checkout() {
   const cart = useSelector((store) => store.cartReducer);
   const info = useSelector((store) => store.infoReducer);
 
-import { useSelector } from 'react-redux';
-import React from 'react'
-import { useDispatch } from 'react-redux';
-import axios from 'axios'
-
   console.log("cart", cart);
   console.log("info", info);
-
 
   return (
     <div>
@@ -31,50 +24,13 @@ import axios from 'axios'
             <th>Item</th>
             <th>Price</th>
           </tr>
+
           {cart.map((item) => {
             return <CheckoutRow key={item.id} item={item} />;
           })}
 
-
         </tbody>
       </table>
-
-    const CheckoutList = useSelector(store => store.cartReducer)
-
-    const handleCheckout = () => {
-        axios.post('/')
-            .then(response => {
-
-                dispatch({
-                    type: 'GET_CHECKOUT',
-                    payload: response.data
-                })
-            }).catch(err => {
-                console.log(err);
-            })
-    }
-
-    
-    
-
-    return (
-        <div>
-            <div className="display">
-                {/* //menu, cust, checkout */}
-                <table>
-                    <tbody>Checkout Table</tbody>
-                </table>
-            </div>
-            <button>Next</button>
-
-        </div>
-
-    )
-
-}
-export default Checkout;
-
-
 
       {/* button 'checkout' -- POST -- with POST Object data as follows 
       // at end - refresh page 
