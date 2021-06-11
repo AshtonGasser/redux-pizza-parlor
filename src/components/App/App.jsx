@@ -21,9 +21,9 @@ function App() {
           <div className="nav-div">
         <nav className="nav">
          
-              <Link to="/">Home</Link>
+              
           
-              <Link to="/menu-form">Menu</Link>
+              <Link to="/">Menu</Link>
            
               <Link to="/customer">Customer Info</Link>
               
@@ -37,8 +37,9 @@ function App() {
 
         </div>
         {/* <img src='images/pizza_photo.png' /> */}
-
-        <Route path="/menu-form">
+        
+{/* using exact, so that each page doesn't have the menu */}
+        <Route path="/" exact>  
           <MenuForm />
         </Route>
 

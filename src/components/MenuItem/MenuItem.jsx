@@ -26,7 +26,7 @@ function MenuItem({ item }) {
     setIsAdd(true);
   }
 
-  // renders a button to add or delete based on local state of isAdd boolean
+   // renders a button to add or delete based on local state of isAdd boolean     isAdd ? <button> : <button> 
     function addOrRemove() {
       if (isAdd) {
         return <button onClick={handleAdd}>Add</button>;

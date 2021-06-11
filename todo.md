@@ -31,12 +31,13 @@ radio for pick or delivery
 
 
 ---checkout---
-display customer info
-order details, from cart reducer
-total cost
+x display customer info
+x order details, from cart reducer
+x total cost
 
+
+!!!
 post data should be named postData
-
 post axios 
 
 XX - Store -(
@@ -49,3 +50,6 @@ menuReducer - is the db response from the get (pageLoad)
 
 standup -- cost component, form front, explain how items are passed into cart
 customer info reducer?
+'
+
+present cart info, f

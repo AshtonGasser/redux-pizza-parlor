@@ -18,23 +18,19 @@ const menuReducer = (state=[], action) => {
 
 const infoReducer = (state = [], action) => {
     if (action.type === 'ADD_INFO') {
-        return [...state, action.payload]
+        return [action.payload]
     }
     return state;
 }
 
-
-// tl- this needs to take in the ID, in payload, and filter out all items 
-// not in the cart, return a new state array of things in the cart. this needs to be 
-// referenced in the 
 const cartReducer = (state = [], action) => {
 
     switch(action.type){ 
     case 'ADD_TO_CART':
-    return [...state,action.payload]
+    return [...state, action.payload]
     case 'REMOVE_FROM_CART':
-        const matchItem = item => item.id !== action.payload.id
-        return state.filter(matchItem)
+        const matchItem = item => item.id !== action.payload.id  // item is taco, it is an 'element' of the array that filter is called on, we grab the ID, 
+        return state.filter(matchItem) // and filter the array to be only things that DONT match
     default:
     return state;
     }
@@ -55,4 +51,3 @@ ReactDOM.render(
 document.getElementById('root'));
 
 
-/// customer info reducer?

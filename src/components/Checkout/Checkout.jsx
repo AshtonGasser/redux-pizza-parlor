@@ -26,10 +26,35 @@ function Checkout() {
           </tr>
 
           {cart.map((item) => {
-            return <CheckoutRow item={item} />;
+            return <CheckoutRow key={item.id} item={item} />;
           })}
+
         </tbody>
       </table>
+
+      {/* button 'checkout' -- POST -- with POST Object data as follows 
+      // at end - refresh page 
+      {
+  "customer_name": "Donatello", ---- inforeduc
+  "street_address": "20 W 34th St", ---- inforeduc
+  "city": "New York", ---- inforeduc
+  "zip": "10001", ---- inforeduc
+  "total": "27.98", -- totalcost componenet
+  "type": "Pickup", --- neeed still , but on customer page and in inforeducer
+
+  "pizzas": [{ cartreducer - loop over cart produce objects 
+    "id": "1",
+    "quantity": "1"
+  },{
+    "id": "2",
+    "quantity": "1"
+  }]
+}
+ */}
+
+
+
+
     </div>
   );
 }
@@ -37,4 +62,4 @@ function Checkout() {
 export default Checkout;
 
 
-// change [0] to .length
+// change [0] to .length?
