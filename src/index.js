@@ -16,14 +16,21 @@ const menuReducer = (state=[], action) => {
 }
 
 
+const infoReducer = (state = [], action) => {
+    if (action.type === 'ADD_INFO') {
+        return [action.payload]
+    }
+    return state;
+}
+
 const cartReducer = (state = [], action) => {
 
     switch(action.type){ 
     case 'ADD_TO_CART':
-    return [...state,action.payload]
-    //case 'REMOVE_FROM_CART':
-    //const matchOrder = pizza => pizza.idNumber !== pizzaToDelete.idNumber; 
-    //return state.filter(matchOrder)
+    return [...state, action.payload]
+    case 'REMOVE_FROM_CART':
+        const matchItem = item => item.id !== action.payload.id  // item is taco, it is an 'element' of the array that filter is called on, we grab the ID, 
+        return state.filter(matchItem) // and filter the array to be only things that DONT match
     default:
     return state;
     }
@@ -41,9 +48,14 @@ const checkoutReducer = (state = [], action) => {
 const store = createStore(
 combineReducers({
 menuReducer,
+<<<<<<< HEAD
 cartReducer, 
 checkoutReducer 
 
+=======
+cartReducer,
+infoReducer
+>>>>>>> fc47c4583d4925929e349b3d1079f90e665c3d97
 }),
 applyMiddleware(logger),
 )
@@ -52,3 +64,5 @@ ReactDOM.render(
 <App />
 </Provider>, 
 document.getElementById('root'));
+
+
