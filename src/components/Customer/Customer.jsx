@@ -1,4 +1,7 @@
 function Customer () {
+
+    return (
+
 <div>
     <input type="text" placeholder="Name"></input>
     <input type="text" placeholder="Address"></input>
@@ -7,6 +10,9 @@ function Customer () {
 
 </div>
  
+
+    )
+
 }
 
 export default Customer

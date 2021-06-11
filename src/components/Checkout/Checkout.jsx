@@ -1,8 +1,11 @@
 function Checkout () {
-    <div>
-       <p>checkout</p>
-    
-    </div>
+
+    return (  
+         <div>
+        <p>checkout</p>
+     
+     </div> )
+ 
      
 }
     

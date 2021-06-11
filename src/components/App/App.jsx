@@ -10,14 +10,13 @@ import {
   useHistory,
 } from "react-router-dom";
 
-import Customer from '../Customer/Customer'
+import Customer from '../Customer/Customer.jsx'
 import Checkout from '../Checkout/Checkout.jsx'
 
 
 function App() {
   return (
     <Router>
-     
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Prime Pizza</h1>
@@ -25,38 +24,33 @@ function App() {
         <nav>
           <ul>
             <li>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/">Menu</Link>
+              <Link to="/menu-form">Menu</Link>
             </li>
             <li>
-              <Link to="/Customer">Customer Info</Link>
+              <Link to="/customer">Customer Info</Link>
               <li>
-              <Link to="/Checkout">Checkout</Link>
+              <Link to="/checkout">Checkout</Link>
             </li>
             </li>
           </ul>
         </nav>
-     
-        
- 
+
         {/* <img src='images/pizza_photo.png' /> */}
         <p>Pizza is great.</p>
 
-      
 
- <Route path='/'>
+        <Route path="/menu-form">
+          <MenuForm />
+        </Route>
 
- <MenuForm />
- </Route>
-         
-        
-
-        <Route path="/Customer">
+        <Route path="/customer">
           <Customer />
         </Route>
 
-        <Route path="/Checkout">
+        <Route path="/checkout">
           <Checkout />
         </Route>
 
