@@ -31,8 +31,13 @@ function Checkout() {
 
         </tbody>
       </table>
+    </div>
+  );
+}
 
-      {/* button 'checkout' -- POST -- with POST Object data as follows 
+export default Checkout;
+
+    {/* button 'checkout' -- POST -- with POST Object data as follows 
       // at end - refresh page 
       {
   "customer_name": "Donatello", ---- inforeduc
@@ -52,14 +57,6 @@ function Checkout() {
 }
  */}
 
-
-
-
-    </div>
-  );
-}
-
-export default Checkout;
 
 
 // change [0] to .length?
