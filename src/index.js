@@ -48,14 +48,9 @@ const checkoutReducer = (state = [], action) => {
 const store = createStore(
 combineReducers({
 menuReducer,
-<<<<<<< HEAD
-cartReducer, 
-checkoutReducer 
-
-=======
 cartReducer,
-infoReducer
->>>>>>> fc47c4583d4925929e349b3d1079f90e665c3d97
+infoReducer,
+checkoutReducer
 }),
 applyMiddleware(logger),
 )
