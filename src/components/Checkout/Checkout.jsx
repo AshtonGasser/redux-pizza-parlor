@@ -83,7 +83,7 @@ export default Checkout;
    
   
 
-export default Checkout;
+
 
 
 // change [0] to .length?
