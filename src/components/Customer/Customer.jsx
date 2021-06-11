@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-
+import {useHistory} from "react-router-dom";
 function Customer() {
+const  history = useHistory()
 // states for inputs -- 
 // inputs need value and on change event set -- see employeeForm from redux salary
 // handle submit should call addInfo
@@ -14,12 +15,21 @@ const [zip, setZip] = useState('')
 
 const dispatch = useDispatch();
 
+
+const handleNext = () => {
+ 
+  history.push('/checkout')
+}
+
 const addInfo = (info) => {
     console.log('dispatching', info);
     dispatch({
         type: 'ADD_INFO',
         payload: info
     })
+    
+      history.push('/checkout')
+      
 }
 
     function handleSubmit (event) {
@@ -36,6 +46,8 @@ const addInfo = (info) => {
 
   return (
     <div className="display">
+      
+
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Name"
         value={name}
