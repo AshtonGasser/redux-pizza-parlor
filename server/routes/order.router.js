@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
 
 // POST a new order
 router.post('/', async (req, res) => {
+    console.log('got to order post')
     const client = await pool.connect();
 
     try {

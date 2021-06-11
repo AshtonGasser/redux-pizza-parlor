@@ -46,7 +46,8 @@ const handleNext = () => {
 
       {menu.map((item) => (
         <MenuItem key={item.id}
-        item={item} />
+        item={item}
+         />
       ))}
     </div>
   );

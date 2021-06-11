@@ -1,5 +1,7 @@
 import { useSelector } from "react-redux";
 import CheckoutRow from "../CheckoutRow/CheckoutRow";
+import axios from 'axios';
+import TotalCost from '../TotalCost/TotalCost'
 
 function Checkout() {
   const cart = useSelector((store) => store.cartReducer);
@@ -7,6 +9,60 @@ function Checkout() {
 
   console.log("cart", cart);
   console.log("info", info);
+
+  function calculateCost () {
+    let cost = 0;
+    cart.forEach(item => {
+        cost += Number(item.price) 
+       
+    });
+    return cost
+
+  // return cost.toLocaleString('en-US', {
+  //   style: 'currency',
+  //   currency: 'USD',
+  // });
+}
+
+  function handleCheckout () {
+    console.log('got to handle checkout ');
+
+    cart.forEach(item => {
+      item.quantity = 1;
+    })
+    
+    console.log('cart is :', cart)
+
+    postOrder({
+      customer_name: info[0].name,
+      street_address: info[0].address,
+      city: info[0].city,
+      zip: info[0].zip,
+      type: "Delivery", 
+      total : calculateCost(), 
+      
+      pizzas: cart,
+
+    })
+
+  }
+
+  function postOrder (order) {
+     console.log('got to postOrder', order)
+      axios.post('/api/order', order)
+        .then( response => {
+          console.log(response);
+        }).catch (error => {
+          console.log(error)
+        })
+
+
+        // empty inputs etc
+
+        
+
+  }
+  //axios.post('/books', {title, author})
 
   return (
     <div>
@@ -18,7 +74,10 @@ function Checkout() {
         <p>{info[0].city}</p>
         <p>{info[0].zip}</p>
       </div>
-      <table className="">
+
+      <button onClick={handleCheckout}>Checkout</button> 
+
+      <table className="table-class">
         <tbody>
           <tr>
             <th>Item</th>
