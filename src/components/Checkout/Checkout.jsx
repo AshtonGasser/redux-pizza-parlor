@@ -1,13 +1,43 @@
+import { useSelector } from "react-redux";
+import CheckoutRow from "../CheckoutRow/CheckoutRow";
+
+
+function Checkout() {
+  const cart = useSelector((store) => store.cartReducer);
+  const info = useSelector((store) => store.infoReducer);
 
 import { useSelector } from 'react-redux';
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import axios from 'axios'
 
+  console.log("cart", cart);
+  console.log("info", info);
 
-function Checkout() {
-    const dispatch = useDispatch()
 
+  return (
+    <div>
+      <div>
+        <p>Delivering to:</p>
+        <br />
+        <p>{info[0].name}</p>
+        <p>{info[0].address}</p>  
+        <p>{info[0].city}</p>
+        <p>{info[0].zip}</p>
+      </div>
+      <table className="">
+        <tbody>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+          </tr>
+          {cart.map((item) => {
+            return <CheckoutRow key={item.id} item={item} />;
+          })}
+
+
+        </tbody>
+      </table>
 
     const CheckoutList = useSelector(store => store.cartReducer)
 
@@ -46,9 +76,34 @@ export default Checkout;
 
 
 
-// ### ORDER - CHECKOUT
+      {/* button 'checkout' -- POST -- with POST Object data as follows 
+      // at end - refresh page 
+      {
+  "customer_name": "Donatello", ---- inforeduc
+  "street_address": "20 W 34th St", ---- inforeduc
+  "city": "New York", ---- inforeduc
+  "zip": "10001", ---- inforeduc
+  "total": "27.98", -- totalcost componenet
+  "type": "Pickup", --- neeed still , but on customer page and in inforeducer
 
-// Users should not be able to modify item totals on this screen. When they click checkout, the user information, 
-// order total and array of pizzas should be sent to the server. After the checkout is complete, 
-// navigate the user back to the **select pizza** page AND clear out the reducers as appropriate. Each order should begin with "clean" order data 
-// (cart, address, etc).
+  "pizzas": [{ cartreducer - loop over cart produce objects 
+    "id": "1",
+    "quantity": "1"
+  },{
+    "id": "2",
+    "quantity": "1"
+  }]
+}
+ */}
+
+
+
+
+    </div>
+  );
+}
+
+export default Checkout;
+
+
+// change [0] to .length?

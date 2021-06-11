@@ -1,16 +1,5 @@
-.menu-card{
-    display: flex;
-   
-}
-
-.pizza-img {
-   width: 100%
-}
 
 .display{
     display: flexbox;
 }
 
-.pizza-description{
-    width: 100%
-}

@@ -1,103 +1,45 @@
-import { useEffect,useState } from "react"
-import { useSelector,  useDispatch } from "react-redux"
-import MenuItem from '../MenuItem/MenuItem'
-import axios from 'axios'
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import MenuItem from "../MenuItem/MenuItem";
+import axios from "axios";
 
-import './MenuForm.css'
+import "./MenuForm.css";
 
+function MenuForm() {
+  const dispatch = useDispatch();
+  const menu = useSelector((store) => store.menuReducer);
+  // const [isAdd, setIsAdd] = useState(true)
 
-function MenuForm () {
-    const dispatch = useDispatch()
-    const menu = useSelector(store => store.menuReducer)
-    const [isAdd, setIsAdd] = useState(true)
-
-    
-      // get menu data from server on load
+  // get menu data from server on load
   useEffect(() => {
-    console.log('in useEffect');
+    console.log("in useEffect");
     setMenu();
-    
   }, []);
 
   //sends a dispatch to the menu reducer to set it to the present "pizza" table via an axios.GET
-const setMenu = () => {
-    axios.get('/api/pizza')
-    .then( response => {
+  const setMenu = () => {
+    axios
+      .get("/api/pizza")
+      .then((response) => {
         dispatch({
-            type: 'SET_MENU',
-            payload: response.data
-          })
-    })
-    .catch(error => {
-        console.log('error getting menu', error);
-    })     
-}
-
-//sends a dispatch to the menu reducer to set the above 
-
-
-
-// added by tucker 330pm \/
-function handleAdd (ID, isAdd) {
-    console.log('Adding Pizza');
-    dispatch({
-        type: 'ADD_TO_CART',
-        payload: ID
+          type: "SET_MENU",
+          payload: response.data,
+        });
       })
-}
-function handleRemove (ID, isAdd) {
-    console.log('Removing Pizza');
-    dispatch({
-        type: 'REMOVE_FROM_CART',
-        payload: ID
-      })
-}
+      .catch((error) => {
+        console.log("error getting menu", error);
+      });
+  };
 
-// conditionally rendered button that also sends the above dispatches on click 
-function addOrRemove (ID) {
-    if (isAdd) {
-    
-        return <button onClick={handleAdd}>Add</button>
-    } else if (!isAdd) {
-        
-        return <button onClick={handleRemove}>Remove</button>
-    }
+// maps over the menu and returns a menu item per each
+  return (
+    <div className="display">
+      {menu.map((item) => (
+        <MenuItem key={item.id}
+        item={item} />
+      ))}
+    </div>
+  );
 }
 
-    return (
-        <div>
-            <div className="display">
-          
-            {menu.map((item) => 
-            
-             <div className="menu-card" key={item.id}>
-             <div className="img-div">
-                <img className="pizza-img" src={item.image_path} alt="" />
-             </div>
-             <div className="pizza-description">
-                <p>{item.name}</p>
-                <p>{item.description}</p>
-             </div>
-             <div className="card-button">
-                 {addOrRemove(item.ID)}
-
-                 {/* <button onClick={addOrRemove(item.id, isAdd)}></button> */}
-             </div>
- 
- 
-         </div>
-        )}
-
-            </div>
-
-            <button>Next</button>
-
-        </div>
-
-    )
-}
-
-
-
-
-export default MenuForm
+export default MenuForm;
